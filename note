@@ -1,0 +1,69 @@
+
+
+// const isAlice = await ask.ask(`Are you Alice?`, ask.yesno);
+// const who = isAlice ? "Alice" : "Bob";
+
+// console.log(`>>>>> Welcome to SWAP CONTRACT ${who} <<<<<`);
+
+// let acc = null;
+// const createAcc = await ask.ask(
+//   `Would you like to create an account?`,
+//   ask.yesno
+// );
+// if (createAcc) {
+//   console.log(`You are the sender `);
+//   acc = await stdlib.newTestAccount(stdlib.parseCurrency(1000));
+// } else {
+//   console.log(`You are the receiver`);
+//   const secret = await ask.ask(
+//     `What is your account secret?`, 
+//     (x => x)
+//     );
+//   acc = await stdlib.newAccountFromSecret(secret);
+// }
+
+// let ctc = null;
+// if (isAlice) {
+//   ctc = acc.contract(backend);
+//   ctc.getInfo().then((info) => {
+//     console.log(`The contract is deployed as = ${JSON.stringify(info)}`); });
+// } else {
+//   const info = await ask.ask(
+//     `Please paste the contract information:`,
+//     JSON.parse
+//   );
+//   ctc = acc.contract(backend, info);
+// }
+
+
+// const fmt = (x) => stdlib.formatCurrency(x, 4);
+// const getBalance = async () => fmt(await stdlib.balanceOf(acc));
+
+// const before = await getBalance();
+// console.log(`Your balance is ${before}`);
+
+// if (isAlice) {
+//   const amt = await ask.ask(
+//     `How much are you sending?`,
+//     stdlib.parseCurrency
+//   );
+//   sendToken: amt;
+// } else {
+//   receiveToken: async (amt) => {
+//     const accept = await ask.ask(
+//       `Do you accept the token of ${fmt(amt)}?`,
+//       ask.yesno
+//     );
+//     if(!accept) {
+//       process.exit(0)
+//     }
+//   };
+// }
+
+// // const part = isAlice ? ctc.p.Alice : ctc.p.Bob;
+// // await part(interact);
+
+// const after = await getBalance(who);
+// console.log(`Your balance is now ${after}`);
+
+// ask.done();
